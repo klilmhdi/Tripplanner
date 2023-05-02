@@ -158,7 +158,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class createTripActivity extends AppCompatActivity {
     Button addBtn;
     // Button showBtn;
-    EditText startFieldEdit, endFieldEdit, locationFieldEdit;
+    EditText nameFieldEdit, startFieldEdit, endFieldEdit, locationFieldEdit;
     ListView listView;
 
     @Override
@@ -167,6 +167,7 @@ public class createTripActivity extends AppCompatActivity {
         setContentView(R.layout.activity_creat_trip);
         addBtn = findViewById(R.id.nextButton);
         startFieldEdit = findViewById(R.id.startDateEditText);
+        nameFieldEdit = findViewById(R.id.nameTripEditText);
         endFieldEdit = findViewById(R.id.endDateEditText);
         locationFieldEdit = findViewById(R.id.locationEditText);
         addBtn.setOnClickListener(new View.OnClickListener() {
