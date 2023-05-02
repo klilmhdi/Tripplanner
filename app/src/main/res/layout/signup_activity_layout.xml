@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pic">
+
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="@string/get_started"
+        android:textColor="#0277BD"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="48dp"
+        android:autofillHints=""
+        android:hint="@string/name"
+        android:inputType="text|textPersonName"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerTitle"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/phone_number_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_edit_text"
+        android:layout_margin="25dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="#795548"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_edit_text"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone_number_edit_text"
+        android:layout_margin="25dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:hint="@string/mot_de_pass"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="#795548"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_edit_text"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/password_verification_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_edit_text"
+        android:layout_margin="25dp"
+        android:layout_marginTop="168dp"
+        android:autofillHints=""
+        android:hint="@string/password_verification"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="#795548"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_edit_text"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/create_account_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_verification_edit_text"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button2"
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_verification_edit_text"
+        tools:ignore="VisualLintButtonSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

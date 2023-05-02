@@ -1,0 +1,135 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/creat">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="@string/add_new_trip"
+        android:textColor="@color/beige3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameTripEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:hint="@string/name_your_trip"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/startDateEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:hint="@string/start_date"
+        android:drawableStart="@drawable/baseline_calendar_month_24"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTripEditText"
+        tools:ignore="TextSizeCheck"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/endDateEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:hint="@string/end_date"
+        android:drawableStart="@drawable/baseline_calendar_month_24"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startDateEditText"
+        tools:ignore="TextSizeCheck"
+        android:autofillHints="" />
+
+
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:hint="@string/trip_location"
+        android:drawableStart="@drawable/baseline_add_location_24"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDateEditText"
+        tools:ignore="TextSizeCheck"
+        android:autofillHints="" />
+
+
+    <EditText
+        android:id="@+id/et_amount"
+
+        android:layout_width="148dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="10dp"
+        android:autofillHints=""
+        android:drawableStart="@drawable/baseline_attach_money_24"
+
+        android:drawablePadding="8dp"
+
+
+        android:hint="@string/currency"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="241dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button2"
+        android:text="@string/next"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

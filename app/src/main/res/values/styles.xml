@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application theme. -->
+    <style name="Theme.Tripplanner" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customizations for your app's theme -->
+        <item name="android:textAppearanceLarge">@style/TextAppearance.Large</item>
+        <!-- Add other customizations as needed -->
+    </style>
+
+    <!-- Customizations for your app's theme -->
+    <style name="Theme.Tripplanner.Custom" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/my_custom_primary_color</item>
+        <!-- Add other customizations as needed -->
+    </style>
+
+    <!-- Text appearance for large text -->
+    <style name="TextAppearance.Large">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance">TextAppearance</style>
+
+</resources>

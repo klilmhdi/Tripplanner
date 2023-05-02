@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/sac3"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/question_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/subquestion_textview"
+        android:layout_marginBottom="1dp"
+        android:text="@string/quick"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subquestion_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checklist_layout"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/what_s_your_travel_style"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/checklist_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="185dp"
+
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        tools:ignore="UnknownId">
+
+        <CheckBox
+            android:id="@+id/backpacker_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:text="@string/backpacker2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/couple_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:minHeight="48dp"
+            android:text="@string/couple2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/family_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:text="@string/family2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/group_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:text="@string/group2"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck,VisualLintBounds" />
+
+        <CheckBox
+            android:id="@+id/business_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/business2"
+            tools:ignore="VisualLintBounds" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rounded_background_button"
+        android:text="@string/submit2"
+
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/email_edit_text"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="185dp"
+        android:hint="@string/or_maybe_a_different_style2"
+        android:minHeight="48dp"
+        android:textSize="12sp"
+        tools:ignore="TextFields,TextSizeCheck"
+        android:autofillHints="
+       " />
+
+
+    <TextView
+        android:id="@+id/skipTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:text="@string/skip"
+        android:textColor="@color/red"
+        android:gravity="center"
+
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

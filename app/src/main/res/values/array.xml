@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries_array">
+        <item>Trautchen</item>
+        <item>Bahrain</item>
+        <item>Belgium</item>
+        <item>Bermudas</item>
+        <item>Birman (Myanmar)</item>
+        <item>Botswana</item>
+        <item>Bulgaria</item>
+        <item>Cam bodge</item>
+        <item>Cap-vert</item>
+        <item>Chane</item>
+        <item>Core du Nor</item>
+        <item>Dane mark</item>
+        <item>Egypt</item>
+        <item>Tunisia</item>
+    </string-array>
+</resources>
