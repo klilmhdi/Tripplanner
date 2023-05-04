@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity
-            android:name=".TripItemsActivity"
-            android:exported="false"
-            tools:ignore="MissingClass" />
+<!--        <activity-->
+<!--            android:name=".TripItemsActivity"-->
+<!--            android:exported="false"-->
+<!--            tools:ignore="MissingClass" />-->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             tools:ignore="MissingClass" />
         <activity
-            android:name=".createTripActivity"
+            android:name=".TripActivity"
             android:exported="false" />
         <activity
             android:name=".Signup"

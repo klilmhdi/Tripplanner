@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey;
 public class TripModel {
 
 
-    @ColumnInfo(name = "name")
-    private final String name;
+//    @ColumnInfo(name = "name")
+//    private final String name;
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -54,9 +54,9 @@ public class TripModel {
         this.endDate = endDate;
     }
 
-    public TripModel(int id, String name, String location, String startDate, String endDate) {
-        this.id = id;
-        this.name = name;
+    public TripModel(String location, String startDate, String endDate) {
+//        this.id = id;
+//        this.name = name;
         this.location = location;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -65,15 +65,15 @@ public class TripModel {
     @Override
     public String toString() {
         return "TripModel{" +
-                "id=" + id +
-                "name=" + name +
+//                "id=" + id +
+//                "name=" + name +
                 ", location='" + location + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
                 '}';
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 }

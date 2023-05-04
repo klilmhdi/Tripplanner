@@ -119,20 +119,20 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "trips.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TABLE_EVENTS = "events";
+    private static final String TABLE_NAME = "trips";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_LOCATION = "location";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_START_DATE = "start_date";
     private static final String COLUMN_END_DATE = "end_date";
 
-    private static final String CREATE_TABLE_EVENTS = "CREATE TABLE " + DATABASE_NAME + " (" +
-            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            COLUMN_NAME + " TEXT," +
-            COLUMN_LOCATION + " TEXT," +
-            COLUMN_START_DATE + " INTEGER," +
-            COLUMN_END_DATE + " INTEGER" +
-            ")";
+//    private static final String TABLE_EVENTS = "CREATE TABLE " + DATABASE_NAME + " (" +
+//            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+//            COLUMN_NAME + " TEXT," +
+//            COLUMN_LOCATION + " TEXT," +
+//            COLUMN_START_DATE + " INTEGER," +
+//            COLUMN_END_DATE + " INTEGER" +
+//            ")";
 
     public TripDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -140,84 +140,72 @@ public class TripDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_EVENTS);
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+//                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+//                COLUMN_NAME + " TEXT," +
+                COLUMN_LOCATION + " TEXT," +
+                COLUMN_START_DATE + " INTEGER," +
+                COLUMN_END_DATE + " INTEGER" +
+                ")");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_EVENTS);
-        onCreate(db);
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+//                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+//                COLUMN_NAME + " TEXT," +
+                COLUMN_LOCATION + " TEXT," +
+                COLUMN_START_DATE + " INTEGER," +
+                COLUMN_END_DATE + " INTEGER" +
+                ")");
+//        onCreate(db);
     }
 
     public boolean insert(TripModel tripModel) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, tripModel.getEndDate());
+//        values.put(COLUMN_NAME, tripModel.getName());
         values.put(COLUMN_LOCATION, tripModel.getLocation());
         values.put(COLUMN_START_DATE, tripModel.getStartDate());
         values.put(COLUMN_END_DATE, tripModel.getEndDate());
-        long insert = database.insert(TABLE_EVENTS, null, values);
+        long insert = database.insert(TABLE_NAME, null, values);
         if (insert == -1) {
             return false;
         } else {
             return true;
         }
     }
-
-    public List<TripModel> getAllTrips() {
-        List<TripModel> tripList = new ArrayList<>();
-
+    public List<TripModel> getAllData() {
         String queryString = "SELECT * FROM " + DATABASE_NAME;
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(queryString, null);
+        List<TripModel> tripList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
 
-        if (cursor != null && cursor.moveToFirst()) {
-//            do {
-//                int idIndex = cursor.getColumnIndex(COLUMN_ID);
-//                int locationIndex = cursor.getColumnIndex(COLUMN_LOCATION);
-//                int startDateIndex = cursor.getColumnIndex(COLUMN_START_DATE);
-//                int endDateIndex = cursor.getColumnIndex(COLUMN_END_DATE);
-//
-//                if (idIndex >= 0 && locationIndex >= 0 && startDateIndex >= 0 && endDateIndex >= 0) {
-//                    int id = cursor.getInt(idIndex);
-//                    String location = cursor.getString(locationIndex);
-//                    String startDate = cursor.getString(startDateIndex);
-//                    String endDate = cursor.getString(endDateIndex);
-//                    tripList.add(new TripModel(id, location, startDate, endDate));
-//                }
-//            } while (cursor.moveToNext());
+        Cursor cursor = null;
+        if (db != null) {
+            assert false;
             if (cursor.moveToFirst()) {
+                cursor = db.rawQuery(queryString, null);
                 do {
-                    int id = cursor.getInt(0);
-                    String name = cursor.getString(1);
-                    String location = cursor.getString(1);
-                    String startDate = cursor.getString(1);
-                    String endDate = cursor.getString(1);
-                    tripList.add(new TripModel(id, name, location, startDate, endDate));
-                } while (cursor.moveToFirst());
-            } else {
+//                    int idIndex = cursor.getColumnIndex(COLUMN_ID);
+//                    int nameIndex = cursor.getColumnIndex(COLUMN_NAME);
+                    int locationIndex = cursor.getColumnIndex(COLUMN_LOCATION);
+                    int startDateIndex = cursor.getColumnIndex(COLUMN_START_DATE);
+                    int endDateIndex = cursor.getColumnIndex(COLUMN_END_DATE);
 
+                    // if (idIndex >= 0 && locationIndex >= 0 && startDateIndex >= 0 && endDateIndex >= 0) {
+//                        int id = cursor.getInt(idIndex);
+//                        String name = cursor.getString(nameIndex);
+                        String location = cursor.getString(locationIndex);
+                        String startDate = cursor.getString(startDateIndex);
+                        String endDate = cursor.getString(endDateIndex);
+                        tripList.add(new TripModel(location, startDate, endDate));
+                    // }
+                } while (cursor.moveToNext());
             }
         }
-        assert cursor != null;
+        assert false;
         cursor.close();
         db.close();
         return tripList;
     }
-//
-//    public void deleteTrip(int id) {
-//        SQLiteDatabase db = getWritableDatabase();
-//        db.delete(TABLE_EVENTS, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
-//        db.close();
-//    }
-
-//    public boolean isAdd(TripModel model) {
-//        SQLiteDatabase database = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put(COLUMN_LOCATION, model.getLocation());
-//        values.put(COLUMN_START_DATE, model.getStartDate());
-//        values.put(COLUMN_END_DATE, model.getEndDate());
-//        long insert = database.insert(TABLE_EVENTS, null, values);
-//        return insert != -1;
-//    }
 }

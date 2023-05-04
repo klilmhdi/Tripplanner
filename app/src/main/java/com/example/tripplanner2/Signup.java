@@ -41,7 +41,7 @@ public class Signup extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Create a new intent to launch the CreateTripActivity
-                Intent intent = new Intent(Signup.this, createTripActivity.class);
+                Intent intent = new Intent(Signup.this, TripActivity.class);
 
                 // Add the user's travel style to the intent as a string
                 if (backpackerCheckbox.isChecked()) {
@@ -71,7 +71,7 @@ public class Signup extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Signup.this, createTripActivity.class);
+                Intent intent = new Intent(Signup.this, TripActivity.class);
                 startActivity(intent);
             }
         });

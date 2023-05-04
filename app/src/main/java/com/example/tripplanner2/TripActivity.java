@@ -146,6 +146,7 @@ package com.example.tripplanner2;
 //        return mLocationEditText;
 //    }
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -155,7 +156,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class createTripActivity extends AppCompatActivity {
+public class TripActivity extends AppCompatActivity {
     Button addBtn;
     // Button showBtn;
     EditText nameFieldEdit, startFieldEdit, endFieldEdit, locationFieldEdit;
@@ -166,24 +167,35 @@ public class createTripActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creat_trip);
         addBtn = findViewById(R.id.nextButton);
+//        nameFieldEdit = findViewById(R.id.nameTripEditText);
         startFieldEdit = findViewById(R.id.startDateEditText);
         nameFieldEdit = findViewById(R.id.nameTripEditText);
         endFieldEdit = findViewById(R.id.endDateEditText);
         locationFieldEdit = findViewById(R.id.locationEditText);
         addBtn.setOnClickListener(new View.OnClickListener() {
+            TripModel model;
+
             @Override
             public void onClick(View v) {
-                TripModel model;
                 try {
-                    model = new TripModel(-1, "hello", locationFieldEdit.getText().toString(), startFieldEdit.getText().toString(), endFieldEdit.getText().toString());
-                    Toast.makeText(createTripActivity.this, "Successfully", Toast.LENGTH_SHORT).show();
+                    model = new TripModel(
+//                            nameFieldEdit.getText().toString(),
+                            locationFieldEdit.getText().toString(),
+                            startFieldEdit.getText().toString(),
+                            endFieldEdit.getText().toString()
+                    );
+                    Intent intent=new Intent(getApplicationContext(),TripItemsActivity.class);
+//                    intent.putExtra("model", );
+                    Toast.makeText(TripActivity.this, "Successfully", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
-                    model = new TripModel(-1, "hello", "wrong", "wrong", "wrong");
-                    Toast.makeText(createTripActivity.this, "Write an empty field!!!", Toast.LENGTH_SHORT).show();
+//                    model = new TripModel("hello", "wrong", "wrong", "wrong");
+                    Toast.makeText(TripActivity.this, "Write an empty field!!!", Toast.LENGTH_SHORT).show();
                 }
-                TripDatabaseHelper helper = new TripDatabaseHelper(createTripActivity.this);
+                TripDatabaseHelper helper = new TripDatabaseHelper(TripActivity.this);
                 boolean success = helper.insert(model);
-                Toast.makeText(createTripActivity.this, "Successfully= " + model.getLocation(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(TripActivity.this, "Successfully= " + success, Toast.LENGTH_SHORT).show();
+                System.out.println("sssssssssssssssssssssssssssssssssssssssssss" + success);
+
             }
         });
     }
